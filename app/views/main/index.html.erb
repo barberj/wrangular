@@ -2,5 +2,12 @@
   <div ng-repeat="post in posts | orderBy: '-upvotes'">
     {{post.title}} - upvotes: {{post.upvotes}}
   </div>
-  <a class="btn btn-default" ng-click="addPost()">Post</a>
+
+  <form ng-submit="addPost()">
+    <div class="form-group">
+      <input class="field-input" type="text" ng-model="title" placeholder="Title"></input>
+      <input class="field-input" type="number" ng-model="upvotes" placeholder="Vote count"></input>
+      <button class="btn btn-default" type="submit">Post</button>
+    </div>
+  </form>
 </div>
