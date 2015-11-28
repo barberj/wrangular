@@ -1,14 +1,25 @@
-<div ng-app="flapperNews" ng-controller="MainCtrl">
-  <div ng-repeat="post in posts | orderBy: '-upvotes'">
-    <span class="btn btn-sm btn-success" ng-click="incrementUpvotes(post)">^</span>
-    {{post.title}} - upvotes: {{post.upvotes}}
-  </div>
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <style> .glyphicon-thumbs-up { cursor:pointer } </style>
+      <div ng-app="flapperNews" ng-controller="MainCtrl">
+        <div ng-repeat="post in posts | orderBy: '-upvotes'">
+          <span class="btn btn-sm btn-success glyphicon glyphicon-thumbs-up" ng-click="incrementUpvotes(post)"></span>
+          <a ng-show="post.link" href="{{post.link}}">
+            {{post.title}}
+          </a>
+          <span ng-hide="post.link">
+            {{post.title}}
+          </span>
+          - upvotes: {{post.upvotes}}
+        </div>
 
-  <form ng-submit="addPost()">
-    <div class="form-group">
-      <input class="field-input" type="text" ng-model="title" placeholder="Title"></input>
-      <input class="field-input" type="number" ng-model="upvotes" placeholder="Vote count"></input>
-      <button class="btn btn-default" type="submit">Post</button>
-    </div>
-  </form>
-</div>
+        <form ng-submit="addPost()">
+          <div class="form-group">
+            <input class="form-control" type="text" ng-model="title" placeholder="Title"></input>
+            <input class="form-control" type="text" ng-model="link" placeholder="Link"></input>
+            <button class="btn btn-default" type="submit">Post</button>
+          </div>
+        </form>
+      </div>
+  <div>
+<div>
