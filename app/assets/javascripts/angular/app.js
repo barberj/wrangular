@@ -10,6 +10,9 @@ angular.module('flapperNews', [])
     ];
 
     $scope.addPost = function(){
+      if(!$scope.title || $scope.title === '') { return; }
+      if(!$scope.upvotes || $scope.upvotes === '') { return; }
+
       $scope.posts.push({title: $scope.title, upvotes: $scope.upvotes});
       $scope.title = '';
       $scope.upvotes = '';
