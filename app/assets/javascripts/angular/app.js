@@ -1,5 +1,7 @@
-angular.module('flapperNews', ['ui.router'])
-  .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider){
+angular.module('flapperNews', [
+  'templates',
+  'ui.router'
+]).config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider){
     $stateProvider
       .state('home', {
         url: '/home',
