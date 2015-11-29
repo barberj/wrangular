@@ -5,7 +5,7 @@
 //= require templates
 //= require_self
 
-angular.module('flapperNews', [
+angular.module("<%= Rails.application.class.parent_name %>", [
   'templates',
   'ui.router'
 ]).config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider){
