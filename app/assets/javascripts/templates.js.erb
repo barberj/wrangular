@@ -8,7 +8,7 @@ angular.module('templates', []).
     Dir.glob(templates).sort.each do |f|
       depend_on(f)
       key = f.gsub(%r(^#{app_root}/templates/),'').gsub(/.erb$/, "")
-      content = environment.find_asset(f).to_s
+      content = environment.find_asset(f).source
   %>
   $templateCache.put("<%= key %>", "<%= escape_javascript(content) %>");
   <% end %>
